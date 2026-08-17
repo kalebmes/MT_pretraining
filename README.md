@@ -4,8 +4,8 @@ Implementation for the multi-task pre-training approach we propose for Alzheimer
 
 ![pipeline](./pipeline.png)
 
-### Abstract
-Here is the abstract of the paper.
+## Abstract
+[TO BE COMPLETED]
 
 ## How to Prepare the Datasets
 
@@ -94,3 +94,6 @@ We built our code based on the following repositories. We would like to thank th
 * [Medical Open Network for AI - MONAI](https://github.com/project-monai/monai)
 * [PyTorch implementation of SimCLR](https://github.com/Spijkervet/SimCLR)
 * [3D Brain MRI Foundation Model](https://github.com/emilykaczmarek/3D-Neuro-SimCLR). 
+
+## Questions
+Open an issue in this repository or send us an [email](mailto:kaleb.asfaw@ucalgary.ca).
