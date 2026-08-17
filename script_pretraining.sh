@@ -1,0 +1,9 @@
+torchrun pretrain.py \
+    --data_file /path/to/pretraining_data.csv \
+    --save_model_path /path/to/save_directory \
+    --epochs 500 \
+    --batch_size 120 \
+    --image_col image_path \
+    --mask_col mask_path \
+    --age_col age \
+    --sex_col sex \

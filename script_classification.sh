@@ -1,0 +1,15 @@
+python3 alz_classification.py \
+    --categories MCI_CN \
+    --train_file /path/to/train.csv \
+    --val_file /path/to/val.csv \
+    --test_file /path/to/test.csv \
+    --simclr_ckpt /path/to/pretrained_checkpoint.tar \
+    --save_path /path/to/save_directory \
+    --lp_or_ft ft \
+    --image_col image_path \
+    --mask_col mask_path \
+    --age_col Age \
+    --sex_col Sex \
+    --label_col Group \
+    --batch_size 32 \
+    --epochs 100 \

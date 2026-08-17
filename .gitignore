@@ -1,0 +1,6 @@
+__pycache__/
+results/
+*.tar.gz
+mri_dataset/__pycache__/
+simclr/_pycache__/
+simclr/modules/__pycache__/
