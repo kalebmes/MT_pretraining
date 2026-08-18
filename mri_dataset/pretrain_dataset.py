@@ -8,7 +8,7 @@ from torch import Tensor
 from .base import ParseDataset
 from .normalization import masked_standardize
 
-# max number of augmentation retries before SimCLRT1Dataset gives up on a view
+# max number of augmentation retries before PRETRAINT1DATASET gives up on a view
 MAX_VIEW_RETRIES = 20
 
 class PRETRAINT1DATASET(ParseDataset):
