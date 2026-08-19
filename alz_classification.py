@@ -1,5 +1,5 @@
 # Fine-tuning/Linear-probing script adapted from Kaczmarek et al. (2025) 3D T1 SimCLR implementation. https://github.com/emilykaczmarek/3D-Neuro-SimCLR/
-# Modifications: added early fusion and late fusion of age and sex features with the encoder.
+# modified to include early fusion and late fusion of age and sex features with the encoder.
 
 import os
 import csv
@@ -16,10 +16,10 @@ from mri_dataset.loaders import make_downstream_loaders
 # for reproducibility
 def seed_everything(seed):
     torch.manual_seed(seed)
+    np.random.seed(seed)
     if torch.cuda.is_available():
         torch.cuda.manual_seed(seed)
         torch.cuda.manual_seed_all(seed)
-    np.random.seed(seed)
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
 
@@ -176,7 +176,6 @@ class LinearHeadModel(nn.Module):
 def train(model, loader, criterion, optimizer, device, args):
     model.train()
     total_loss = 0
-    nan_count = 0
 
     for step, batch in enumerate(loader):
         x, y = batch['MRI'].to(device), batch['task_label'].to(device)
@@ -194,9 +193,6 @@ def train(model, loader, criterion, optimizer, device, args):
             print(f"Step [{step}/{len(loader)}] Train Loss: {loss.item():.4f}")
 
         total_loss += loss.item()
-    
-    if nan_count > 0:
-        print(f"  WARNING: {nan_count} NaN losses in this epoch!")
     
     return total_loss / len(loader)
 

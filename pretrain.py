@@ -1,5 +1,5 @@
 # Pretraining script adapted from Kaczmarek et al. (2025) 3D T1 SimCLR implementation. https://github.com/emilykaczmarek/3D-Neuro-SimCLR/
-# Modifications: added age prediction + sex classification auxiliary heads and auxiliary loss terms.
+# modified to include age prediction + sex classification auxiliary heads and auxiliary loss terms.
 
 import os
 import numpy as np

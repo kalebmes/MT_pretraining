@@ -95,5 +95,5 @@ We built our code based on the following repositories. We would like to thank th
 * [PyTorch implementation of SimCLR](https://github.com/Spijkervet/SimCLR)
 * [3D Brain MRI Foundation Model](https://github.com/emilykaczmarek/3D-Neuro-SimCLR). 
 
-## Questions
+## Questions?
 Open an issue in this repository or send us an [email](mailto:kaleb.asfaw@ucalgary.ca).
