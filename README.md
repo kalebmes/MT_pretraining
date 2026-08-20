@@ -57,9 +57,6 @@ python3 alz_classification.py \
     --test_file /path/to/test.csv \
     --simclr_ckpt /path/to/pretrained_checkpoint.tar \
     --save_path /path/to/save_directory \
-    --lp_or_ft ft \
-    --image_col image_path \
-    --mask_col mask_path \
     --age_col Age \
     --sex_col Sex \
     --label_col Group \
