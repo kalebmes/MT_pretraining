@@ -1,15 +1,12 @@
-# Multi-Task Pre-Training Improves Alzheimer's Disease Classification from Structural MRI
+# Multi-task pre-training improves Alzheimer's disease classification from structural MRI
 
 Implementation for the multi-task pre-training approach we propose for Alzheimer's disease classification from structural MRI. The code is based on PyTorch and includes scripts for model pre-training, fine-tuning, and evaluation.
 
 ![pipeline](./pipeline.png)
 
-## Abstract
-[TO BE COMPLETED]
+## How to prepare the datasets
 
-## How to Prepare the Datasets
-
-### For Pre-training
+### For the pre-training stage
 Prepare a CSV file with columns for the image paths, mask paths, age and sex of each scans. The column names should be provided in the pre-training script: `pretrain.py`. As an example, the CSV file can look like this:
 
 ```
@@ -18,7 +15,7 @@ image_path,mask_path,age,sex
 /path/to/image2.nii.gz,/path/to/mask2.nii.gz,70,F
 ```
 
-### For Fine-tuning
+### For the fine-tuning stage
 In addition to the columns for image paths, mask paths, age and sex, you should also include a column for the diagnosis of each scan. Make sure to specify the name of the label column (e.g., `Group` or `label`) in the fine-tuning script: `alz_classification.py`. An example of the CSV file can be:
 
 ```
@@ -27,7 +24,7 @@ image_path,mask_path,Age,Sex,Group
 /path/to/image2.nii.gz,/path/to/mask2.nii.gz,70,F,CN
 ```
 
-## How to Run the Code
+## How to run the codes
 Please adjust the parameters in the script according to your dataset.
 
 ### Pre-training
@@ -65,7 +62,7 @@ python3 alz_classification.py \
 ```
 For running our early-fusion model, you can enable the `--age_sex_channel_aware` flag in the command above. Same goes for the late-fusion model with the `--age_sex_encoder_aware` flag. In either case, you should not specify `--simclr_ckpt` since the early-fusion and late-fusion models are trained from scratch.
 
-## Environment Setup
+## Environment setup
 Here are the packages we used in our experiments.
 * python 3.11
 * numpy 1.26.4
